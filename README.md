@@ -3,6 +3,18 @@
 A responsive e-commerce website (plain HTML, CSS and vanilla JavaScript) hosted on **two Ubuntu EC2 instances running Apache**, behind an **AWS Application Load Balancer**.
 A live **"Served by: hostname / AZ"** badge on every page shows which server answered, so you can watch the load balancer share traffic between the instances.
 
+## 🔗 Live demo
+
+**<http://shop-ease-loadbalancer-2114127781.ap-southeast-2.elb.amazonaws.com>**
+
+Open it and refresh a few times: the **"Served by"** badge in the bottom-left corner switches between the two EC2 instances. You can also try:
+
+- [`/health.html`](http://shop-ease-loadbalancer-2114127781.ap-southeast-2.elb.amazonaws.com/health.html): the page the load balancer health check uses (shows `OK`)
+- [`/server-info.json`](http://shop-ease-loadbalancer-2114127781.ap-southeast-2.elb.amazonaws.com/server-info.json): refresh it to see the hostname change
+- [`/does-not-exist`](http://shop-ease-loadbalancer-2114127781.ap-southeast-2.elb.amazonaws.com/does-not-exist): the custom 404 page
+
+> The demo runs on HTTP only (no HTTPS certificate yet), so browsers show "Not secure". If the link is offline, the AWS resources have been shut down to save costs. See the screenshots below.
+
 ![Architecture diagram](docs/architecture.png)
 
 > Diagram source: [`docs/architecture.drawio`](docs/architecture.drawio) (open it with [diagrams.net](https://app.diagrams.net)).
