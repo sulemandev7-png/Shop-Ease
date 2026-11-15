@@ -1,3 +1,16 @@
+# SECRETS - never commit these!
+# EC2 key pairs (.pem = OpenSSH format, .ppk = PuTTY format)
+*.pem
+*.ppk
+*.key
+# AWS credential / environment files
+.env
+.env.*
+credentials
+# IAM access key downloads (e.g. myuser_accessKeys.csv, credentials.csv)
+*accessKeys*.csv
+*credentials*.csv
+
 # Local tooling (not part of the website)
 .claude/
 
