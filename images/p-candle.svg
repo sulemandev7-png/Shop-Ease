@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Candle">
+  <!-- flame -->
+  <path d="M32 6c6 7 6 12 0 14-6-2-6-7 0-14Z" fill="#e2603d" stroke="#1d2433" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- wick -->
+  <path d="M32 20v6" stroke="#1d2433" stroke-width="3" stroke-linecap="round"/>
+  <!-- glass jar with label -->
+  <rect x="16" y="26" width="32" height="30" rx="6" fill="#faf7f2" stroke="#1d2433" stroke-width="3"/>
+  <rect x="16" y="36" width="32" height="10" fill="#2f7d6d"/>
+  <rect x="16" y="26" width="32" height="30" rx="6" fill="none" stroke="#1d2433" stroke-width="3"/>
+</svg>

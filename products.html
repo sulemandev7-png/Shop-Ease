@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | ShopEase</title>
+  <meta name="description" content="Browse all ShopEase products: home, tech, wellness and accessories.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= HEADER (same on every page) ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="ShopEase home">
+        <img src="images/favicon.svg" alt="" width="34" height="34">
+        <span>Shop<strong>Ease</strong></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="cart.html" class="nav-cart">
+          Cart <span class="cart-count" id="cart-count" aria-label="items in cart">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= PAGE TITLE ================= -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">The collection</span>
+        <h1>Shop all products</h1>
+        <p>Twelve things we love, in four small categories. Filter, search, and add to your cart.</p>
+      </div>
+    </section>
+
+    <!-- ================= FILTERS + PRODUCTS ================= -->
+    <section class="container">
+      <div class="shop-toolbar">
+        <!-- Category chips: data-category must match "category" in products.json -->
+        <div class="chips" role="group" aria-label="Filter by category">
+          <button type="button" class="chip" data-category="all">All</button>
+          <button type="button" class="chip" data-category="home">Home &amp; Living</button>
+          <button type="button" class="chip" data-category="tech">Tech</button>
+          <button type="button" class="chip" data-category="wellness">Wellness</button>
+          <button type="button" class="chip" data-category="accessories">Accessories</button>
+        </div>
+
+        <div class="shop-search">
+          <label for="search" class="sr-only">Search products</label>
+          <input type="search" id="search" class="input" placeholder="Search products..." autocomplete="off">
+
+          <label for="sort" class="sr-only">Sort products</label>
+          <select id="sort" class="select">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="result-count" id="result-count" aria-live="polite">Loading products...</p>
+
+      <!-- js/products.js fills this grid with cards from products.json -->
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/favicon.svg" alt="" width="30" height="30">
+            <span>Shop<strong>Ease</strong></span>
+          </a>
+          <p>Everyday essentials, thoughtfully picked. A learning project deployed on AWS.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All products</a></li>
+            <li><a href="products.html?category=home">Home &amp; Living</a></li>
+            <li><a href="products.html?category=tech">Tech</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="cart.html">Your cart</a></li>
+            <li><a href="health.html">Health check</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> ShopEase. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- "Served by" badge (filled by js/main.js) -->
+  <div class="server-badge" id="server-badge" role="status" aria-live="polite">
+    <span class="server-badge__dot"></span>
+    <span class="server-badge__text">Served by: checking...</span>
+  </div>
+
+  <!-- Order matters: main.js (helpers) -> cart.js (addToCart) -> products.js (uses both) -->
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

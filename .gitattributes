@@ -1,0 +1,2 @@
+# Keep Linux (LF) line endings so files and shell scripts work on Amazon Linux
+* text=auto eol=lf

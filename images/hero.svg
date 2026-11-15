@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 400" role="img" aria-label="Illustration of a shopping bag, a gift box and a plant">
+  <!-- Soft background circle -->
+  <circle cx="250" cy="200" r="175" fill="#f1e9dd"/>
+  <circle cx="400" cy="80" r="34" fill="#2f7d6d" opacity="0.15"/>
+  <circle cx="70" cy="120" r="14" fill="#e2603d" opacity="0.25"/>
+
+  <!-- Ground shadow -->
+  <ellipse cx="240" cy="345" rx="190" ry="12" fill="#1d2433" opacity="0.08"/>
+
+  <!-- Gift box (behind the bag) -->
+  <rect x="270" y="190" width="140" height="150" rx="12" fill="#1d2433"/>
+  <rect x="270" y="190" width="140" height="28" rx="12" fill="#2b3448"/>
+  <rect x="332" y="190" width="16" height="150" fill="#e2603d"/>
+
+  <!-- Price tag hanging on the box -->
+  <g transform="rotate(12 385 160)">
+    <rect x="352" y="140" width="72" height="40" rx="8" fill="#faf7f2" stroke="#1d2433" stroke-width="3"/>
+    <circle cx="364" cy="160" r="4" fill="#1d2433"/>
+    <text x="396" y="166" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#1d2433" text-anchor="middle">-20%</text>
+  </g>
+
+  <!-- Shopping bag handle (drawn first so the bag covers its ends) -->
+  <path d="M160 160V125q0-30 35-30t35 30v35" fill="none" stroke="#1d2433" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Shopping bag body -->
+  <rect x="110" y="130" width="170" height="210" rx="18" fill="#e2603d"/>
+  <rect x="110" y="130" width="170" height="16" rx="8" fill="#c44b2b"/>
+  <circle cx="160" cy="160" r="7" fill="#faf7f2"/>
+  <circle cx="230" cy="160" r="7" fill="#faf7f2"/>
+
+  <!-- Round label on the bag -->
+  <circle cx="195" cy="250" r="40" fill="#faf7f2"/>
+  <text x="195" y="266" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="800" fill="#1d2433" text-anchor="middle">S</text>
+
+  <!-- Plant on the left -->
+  <ellipse cx="62" cy="262" rx="12" ry="32" transform="rotate(-25 62 262)" fill="#2f7d6d"/>
+  <ellipse cx="90" cy="260" rx="12" ry="32" transform="rotate(25 90 260)" fill="#3f9a87"/>
+  <ellipse cx="76" cy="250" rx="10" ry="38" fill="#256658"/>
+  <path d="M50 290h52l-6 50H56Z" fill="#1d2433"/>
+
+  <!-- Little sparkles -->
+  <path d="M430 250v26M417 263h26" stroke="#e2603d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M300 92v18M291 101h18" stroke="#2f7d6d" stroke-width="4" stroke-linecap="round"/>
+</svg>

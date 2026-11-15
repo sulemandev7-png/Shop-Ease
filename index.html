@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase | Everyday essentials, thoughtfully picked</title>
+  <meta name="description" content="ShopEase - a small, curated online store for home, tech, wellness and accessories.">
+  <!-- Relative paths (no leading "/") so the site works from any folder -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Lets keyboard users jump past the menu -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="ShopEase home">
+        <img src="images/favicon.svg" alt="" width="34" height="34">
+        <span>Shop<strong>Ease</strong></span>
+      </a>
+
+      <!-- Hamburger button (only shown on phones) -->
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="cart.html" class="nav-cart">
+          Cart <span class="cart-count" id="cart-count" aria-label="items in cart">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="eyebrow">New season &middot; Free shipping over $50</span>
+          <h1>Everyday essentials, <em>thoughtfully</em> picked.</h1>
+          <p class="hero-lead">
+            A small, curated store for the things you actually use - home goods,
+            everyday tech, wellness and accessories. No clutter, just good stuff.
+          </p>
+          <div class="hero-actions">
+            <a href="products.html" class="btn btn-primary">Shop the collection</a>
+            <a href="#categories" class="btn btn-outline">Browse categories</a>
+          </div>
+          <ul class="hero-trust">
+            <li>Curated every week</li>
+            <li>30-day easy returns</li>
+            <li>Secure checkout</li>
+          </ul>
+        </div>
+
+        <div class="hero-art">
+          <img src="images/hero.svg" alt="Illustration of a shopping bag, a gift box and a plant" width="480" height="400">
+          <div class="hero-note">
+            <div class="hero-note-dot">✓</div>
+            <div>
+              <strong>Order shipped</strong>
+              <span>Arrives in 2-3 days</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Categories</span>
+            <h2>Shop by category</h2>
+            <p>Four small collections, each picked with care.</p>
+          </div>
+          <a href="products.html" class="btn btn-outline">View all products</a>
+        </div>
+
+        <!-- Each card links to the shop page with a ?category= filter (used in Stage 2) -->
+        <div class="category-grid">
+          <a class="category-card" href="products.html?category=home">
+            <div class="category-icon tint-accent"><img src="images/cat-home.svg" alt=""></div>
+            <h3>Home &amp; Living</h3>
+            <p>Lamps, mugs and cozy things for your space.</p>
+            <span class="category-link">Explore</span>
+          </a>
+
+          <a class="category-card" href="products.html?category=tech">
+            <div class="category-icon tint-blue"><img src="images/cat-tech.svg" alt=""></div>
+            <h3>Tech</h3>
+            <p>Simple gadgets that make the day easier.</p>
+            <span class="category-link">Explore</span>
+          </a>
+
+          <a class="category-card" href="products.html?category=wellness">
+            <div class="category-icon tint-sage"><img src="images/cat-wellness.svg" alt=""></div>
+            <h3>Wellness</h3>
+            <p>Self-care basics for body and mind.</p>
+            <span class="category-link">Explore</span>
+          </a>
+
+          <a class="category-card" href="products.html?category=accessories">
+            <div class="category-icon tint-sand"><img src="images/cat-accessories.svg" alt=""></div>
+            <h3>Accessories</h3>
+            <p>Watches, bags and finishing touches.</p>
+            <span class="category-link">Explore</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="section features">
+      <div class="container">
+        <div class="feature-grid">
+          <div class="feature">
+            <span class="feature-num">01</span>
+            <h3>Free shipping</h3>
+            <p>On every order over $50, delivered in 2-3 business days.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-num">02</span>
+            <h3>30-day returns</h3>
+            <p>Changed your mind? Send it back, no questions asked.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-num">03</span>
+            <h3>Secure checkout</h3>
+            <p>Your cart is saved in your browser until you're ready.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-num">04</span>
+            <h3>Always online</h3>
+            <p>Served from multiple servers, so the store stays up.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLOUD BANNER (AWS demo) ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="cloud-banner">
+          <div>
+            <span class="eyebrow">Behind the scenes</span>
+            <h2>Built to stay online.</h2>
+            <p>
+              ShopEase runs on Apache web servers in more than one AWS Availability Zone.
+              An Application Load Balancer shares visitors between them and skips any
+              server that fails its health check.
+            </p>
+            <p>Refresh this page and watch the <strong>"Served by"</strong> badge in the corner change.</p>
+            <a href="about.html" class="btn btn-light">How it works</a>
+          </div>
+
+          <!-- Simple text diagram of the architecture -->
+          <div class="flow" aria-label="Architecture diagram">
+            <div class="flow-node">You (browser)</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node lb">Application Load Balancer</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-servers">
+              <div class="flow-node">EC2 + Apache<br><small>AZ a</small></div>
+              <div class="flow-node">EC2 + Apache<br><small>AZ b</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/favicon.svg" alt="" width="30" height="30">
+            <span>Shop<strong>Ease</strong></span>
+          </a>
+          <p>Everyday essentials, thoughtfully picked. A learning project deployed on AWS.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All products</a></li>
+            <li><a href="products.html?category=home">Home &amp; Living</a></li>
+            <li><a href="products.html?category=tech">Tech</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="cart.html">Your cart</a></li>
+            <li><a href="health.html">Health check</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> ShopEase. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= "SERVED BY" BADGE =================
+       Filled in by js/main.js using server-info.json -->
+  <div class="server-badge" id="server-badge" role="status" aria-live="polite">
+    <span class="server-badge__dot"></span>
+    <span class="server-badge__text">Served by: checking...</span>
+  </div>
+
+  <!-- main.js first (shared helpers), then cart.js (header cart count) -->
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

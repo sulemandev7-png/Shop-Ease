@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Power bank">
+  <!-- body -->
+  <rect x="18" y="6" width="28" height="52" rx="7" fill="#faf7f2" stroke="#1d2433" stroke-width="3"/>
+  <!-- lightning bolt -->
+  <path d="M35 16 26 34h8l-4 14 11-19h-8Z" fill="#e2603d" stroke="#1d2433" stroke-width="2" stroke-linejoin="round"/>
+  <!-- USB port -->
+  <path d="M28 6h8" stroke="#1d2433" stroke-width="4" stroke-linecap="round"/>
+</svg>

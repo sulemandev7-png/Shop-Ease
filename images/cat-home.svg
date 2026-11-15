@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lamp icon">
+  <!-- Home & Living: a table lamp -->
+  <path d="M20 10h24l8 20H12Z" fill="#e2603d" stroke="#1d2433" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M32 30v22" stroke="#1d2433" stroke-width="3" stroke-linecap="round"/>
+  <path d="M22 54h20" stroke="#1d2433" stroke-width="4" stroke-linecap="round"/>
+</svg>

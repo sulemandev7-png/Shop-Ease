@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Watch icon">
+  <!-- Accessories: a wrist watch -->
+  <rect x="24" y="4" width="16" height="14" rx="3" fill="#1d2433"/>
+  <rect x="24" y="46" width="16" height="14" rx="3" fill="#1d2433"/>
+  <circle cx="32" cy="32" r="15" fill="#faf7f2" stroke="#1d2433" stroke-width="3"/>
+  <path d="M32 32v-8M32 32l6 4" stroke="#e2603d" stroke-width="3" stroke-linecap="round"/>
+</svg>

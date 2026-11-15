@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your cart | ShopEase</title>
+  <meta name="description" content="Review the items in your ShopEase cart.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= HEADER (same on every page) ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="ShopEase home">
+        <img src="images/favicon.svg" alt="" width="34" height="34">
+        <span>Shop<strong>Ease</strong></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="cart.html" class="nav-cart">
+          Cart <span class="cart-count" id="cart-count" aria-label="items in cart">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Checkout</span>
+        <h1>Your cart</h1>
+        <p>Your cart is saved in this browser, so it's still here if you come back later.</p>
+      </div>
+    </section>
+
+    <section class="container">
+
+      <!-- 1. Shown when the cart is empty (js/cart.js decides) -->
+      <div class="empty-state" id="cart-empty" hidden>
+        <img src="images/favicon.svg" alt="">
+        <h3>Your cart is empty</h3>
+        <p>Looks like you haven't added anything yet.</p>
+        <a href="products.html" class="btn btn-primary">Start shopping</a>
+      </div>
+
+      <!-- 2. Shown after "Place order" (demo only - no payment) -->
+      <div class="empty-state" id="order-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3>Thank you! Order <span id="order-number"></span> is placed.</h3>
+        <p>This is a demo store, so no payment was taken and nothing will ship.</p>
+        <a href="products.html" class="btn btn-primary">Keep shopping</a>
+      </div>
+
+      <!-- 3. The cart itself: items on the left, summary on the right -->
+      <div class="cart-layout" id="cart-layout" hidden>
+        <div>
+          <!-- js/cart.js fills this list -->
+          <ul class="cart-items" id="cart-items"></ul>
+          <a href="products.html" class="continue-link">&larr; Continue shopping</a>
+        </div>
+
+        <aside class="cart-summary" aria-label="Order summary">
+          <h2>Order summary</h2>
+
+          <div class="shipping-progress">
+            <span id="shipping-note">Add $50.00 more for free shipping.</span>
+            <div class="shipping-track"><div class="shipping-bar" id="shipping-bar"></div></div>
+          </div>
+
+          <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+          <div class="summary-row"><span>Shipping</span><span id="summary-shipping">$0.00</span></div>
+          <div class="summary-row total"><span>Total</span><span id="summary-total">$0.00</span></div>
+
+          <button type="button" class="btn btn-primary btn-block" id="checkout-btn">Place order</button>
+          <p class="summary-note">Demo checkout - no real payment is taken.</p>
+        </aside>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/favicon.svg" alt="" width="30" height="30">
+            <span>Shop<strong>Ease</strong></span>
+          </a>
+          <p>Everyday essentials, thoughtfully picked. A learning project deployed on AWS.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All products</a></li>
+            <li><a href="products.html?category=home">Home &amp; Living</a></li>
+            <li><a href="products.html?category=tech">Tech</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="cart.html">Your cart</a></li>
+            <li><a href="health.html">Health check</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> ShopEase. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- "Served by" badge (filled by js/main.js) -->
+  <div class="server-badge" id="server-badge" role="status" aria-live="polite">
+    <span class="server-badge__dot"></span>
+    <span class="server-badge__text">Served by: checking...</span>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Water bottle">
+  <!-- cap -->
+  <rect x="25" y="4" width="14" height="9" rx="2" fill="#1d2433"/>
+  <!-- bottle body -->
+  <path d="M25 13h14v4l5 7v30a5 5 0 0 1-5 5H25a5 5 0 0 1-5-5V24l5-7Z" fill="#faf7f2" stroke="#1d2433" stroke-width="3" stroke-linejoin="round"/>
+  <!-- color band -->
+  <rect x="21.5" y="32" width="21" height="12" fill="#e2603d"/>
+</svg>

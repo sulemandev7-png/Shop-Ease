@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sunglasses">
+  <!-- arms -->
+  <path d="M8 30 4 22M56 30l4-8" stroke="#1d2433" stroke-width="3" stroke-linecap="round"/>
+  <!-- bridge -->
+  <path d="M28 32q4-4 8 0" fill="none" stroke="#1d2433" stroke-width="3"/>
+  <!-- lenses -->
+  <circle cx="18" cy="34" r="11" fill="#1d2433"/>
+  <circle cx="46" cy="34" r="11" fill="#1d2433"/>
+  <!-- shine -->
+  <path d="M13 30l4-4M41 30l4-4" stroke="#e2603d" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

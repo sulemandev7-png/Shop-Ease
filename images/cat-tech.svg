@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Headphones icon">
+  <!-- Tech: headphones -->
+  <path d="M14 38v-6a18 18 0 0 1 36 0v6" fill="none" stroke="#1d2433" stroke-width="3" stroke-linecap="round"/>
+  <rect x="9" y="34" width="11" height="18" rx="4" fill="#e2603d" stroke="#1d2433" stroke-width="3"/>
+  <rect x="44" y="34" width="11" height="18" rx="4" fill="#e2603d" stroke="#1d2433" stroke-width="3"/>
+</svg>

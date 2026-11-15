@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | ShopEase</title>
+  <meta name="description" content="About ShopEase and how the site is hosted on AWS.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= HEADER (same on every page) ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="ShopEase home">
+        <img src="images/favicon.svg" alt="" width="34" height="34">
+        <span>Shop<strong>Ease</strong></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="cart.html" class="nav-cart">
+          Cart <span class="cart-count" id="cart-count" aria-label="items in cart">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">About ShopEase</span>
+        <h1>A small store with a simple idea.</h1>
+        <p>Fewer products, chosen with care, on a website that stays online even when a server doesn't.</p>
+      </div>
+    </section>
+
+    <!-- ================= OUR STORY ================= -->
+    <section class="section" style="padding-top: 24px;">
+      <div class="container about-grid">
+        <div>
+          <h2>Our story</h2>
+          <p>
+            ShopEase started as a list of everyday things we kept recommending to friends:
+            a good mug, a lamp that doesn't hurt your eyes, a backpack that lasts.
+            Instead of thousands of choices, we keep a short list of products we'd actually buy.
+          </p>
+          <p>
+            It's also a hands-on cloud project. The store is a plain HTML, CSS and JavaScript
+            site, served by Apache on Amazon EC2 behind an Application Load Balancer.
+          </p>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat"><strong>12</strong><span>curated products</span></div>
+          <div class="stat"><strong>4</strong><span>small categories</span></div>
+          <div class="stat"><strong>2+</strong><span>Availability Zones</span></div>
+          <div class="stat"><strong>1</strong><span>load balancer in front</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT'S HOSTED ================= -->
+    <section class="section features">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Behind the scenes</span>
+            <h2>How this page reached you</h2>
+            <p>The journey of one request, step by step.</p>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <ol class="steps">
+            <li>
+              <h3>You open the site</h3>
+              <p>Your browser connects to the Application Load Balancer's DNS name on port 80.</p>
+            </li>
+            <li>
+              <h3>The load balancer picks a server</h3>
+              <p>It forwards the request to one healthy EC2 instance in its target group, spreading visitors across Availability Zones.</p>
+            </li>
+            <li>
+              <h3>Health checks keep it safe</h3>
+              <p>Every few seconds the load balancer requests <code>health.html</code>. A server that doesn't answer <code>200 OK</code> stops getting traffic.</p>
+            </li>
+            <li>
+              <h3>Apache sends the files</h3>
+              <p>Apache (httpd) on Amazon Linux serves these pages from <code>/var/www/html</code>.</p>
+            </li>
+            <li>
+              <h3>Your browser does the rest</h3>
+              <p>JavaScript loads <code>products.json</code>, keeps your cart in localStorage, and reads <code>server-info.json</code> to show which server answered.</p>
+            </li>
+          </ol>
+
+          <div>
+            <div class="try-box">
+              <h3>Try it yourself</h3>
+              <ul>
+                <li>Refresh this page a few times and watch the <strong>"Served by"</strong> badge switch between servers and AZs.</li>
+                <li>Open <a href="health.html">health.html</a> - that one word "OK" is what the load balancer checks.</li>
+                <li>Stop one EC2 instance: the site stays up and the badge only shows the remaining server.</li>
+                <li>Add items to your cart, then refresh - the cart stays, because it lives in your browser, not on a server.</li>
+              </ul>
+            </div>
+
+            <h3 style="margin-top: 28px;">Built with</h3>
+            <ul class="tag-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Apache httpd</li>
+              <li>Amazon Linux</li>
+              <li>Amazon EC2</li>
+              <li>Application Load Balancer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="section">
+      <div class="container" style="text-align: center;">
+        <h2>Ready to look around?</h2>
+        <p style="color: var(--ink-soft);">Twelve products, zero clutter.</p>
+        <a href="products.html" class="btn btn-primary">Shop the collection</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/favicon.svg" alt="" width="30" height="30">
+            <span>Shop<strong>Ease</strong></span>
+          </a>
+          <p>Everyday essentials, thoughtfully picked. A learning project deployed on AWS.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All products</a></li>
+            <li><a href="products.html?category=home">Home &amp; Living</a></li>
+            <li><a href="products.html?category=tech">Tech</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="cart.html">Your cart</a></li>
+            <li><a href="health.html">Health check</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> ShopEase. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- "Served by" badge (filled by js/main.js) -->
+  <div class="server-badge" id="server-badge" role="status" aria-live="polite">
+    <span class="server-badge__dot"></span>
+    <span class="server-badge__text">Served by: checking...</span>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Local tooling (not part of the website)
+.claude/
+
+# Generated on each EC2 server by the user data script - never commit it
+server-info.json
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/

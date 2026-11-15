@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | ShopEase</title>
+
+  <!-- WHY <base href="/"> IS HERE (only on this page):
+       Apache shows this page for ANY missing URL, e.g. /shop/old/item.
+       The browser would then look for "css/style.css" at
+       /shop/old/css/style.css and the page would have no styles.
+       <base href="/"> says "resolve every relative link from the site root",
+       so css/, js/, images/ and links still work from any address.
+       This works because the site lives in the root folder /var/www/html. -->
+  <base href="/">
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= HEADER (same on every page) ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="ShopEase home">
+        <img src="images/favicon.svg" alt="" width="34" height="34">
+        <span>Shop<strong>Ease</strong></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="cart.html" class="nav-cart">
+          Cart <span class="cart-count" id="cart-count" aria-label="items in cart">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container not-found">
+        <img src="images/lost-bag.svg" alt="" width="320" height="260">
+        <span class="not-found-code">404</span>
+        <h1>This page wandered off.</h1>
+        <p>The page you're looking for doesn't exist or has moved. Let's get you back to something useful.</p>
+        <div class="not-found-actions">
+          <a href="index.html" class="btn btn-primary">Back to home</a>
+          <a href="products.html" class="btn btn-outline">Browse the shop</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top: 0; border-top: 0; padding-top: 0;">
+        &copy; <span id="year">2026</span> ShopEase. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- The badge is useful here too: you can see WHICH server returned the 404 -->
+  <div class="server-badge" id="server-badge" role="status" aria-live="polite">
+    <span class="server-badge__dot"></span>
+    <span class="server-badge__text">Served by: checking...</span>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
