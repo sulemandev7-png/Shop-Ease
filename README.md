@@ -9,17 +9,19 @@ A live **"Served by: hostname / AZ"** badge on every page shows which server ans
 
 ---
 
-## Screenshots
+## Live screenshots (through the load balancer)
 
-| Home | Shop |
-|---|---|
-| ![Home page](docs/screenshot-home.png) | ![Shop page](docs/screenshot-shop.png) |
+Both screenshots were taken through the **same ALB address**. Look at the **"Served by"** badge in the bottom-left corner: each request was answered by a **different EC2 instance**.
 
-| Product detail |
-|---|
-| ![Product page](docs/screenshot-product.png) |
+**Served by instance 1:** `ip-172-31-37-57` / `ap-southeast-2b`
 
-The screenshots were taken locally, so the badge shows `local (no server-info.json)`. On EC2 it shows the real instance, e.g. `Served by: ip-172-31-20-15.ap-southeast-2.compute.internal / ap-southeast-2b`.
+![Product page served by instance 1 through the ALB](docs/live-product-server1.png)
+
+**Served by instance 2:** `ip-172-31-34-117` / `ap-southeast-2b`
+
+![Home page served by instance 2 through the ALB](docs/live-home-server2.png)
+
+A test of 20 requests to `server-info.json` through the ALB was answered **10 times by each instance**. The badge doesn't flip on *every* refresh because the ALB balances **per request**, not per page: one page load makes about 12 requests (HTML, CSS, JS, JSON, images), and the badge only reflects the `server-info.json` request.
 
 <!-- Demo GIF: record refreshing the ALB URL (e.g. with ScreenToGif), save as docs/demo.gif, then uncomment:
 ![Demo: the hostname changes on refresh](docs/demo.gif)
@@ -134,6 +136,7 @@ Check each instance directly too:
 | Problem | Cause | Fix |
 |---|---|---|
 | The "Served by" badge never changed through the ALB | The website was only copied to one instance. The second had no `health.html`, failed the health check and got no traffic. | Deployed the site to both instances. The target group then showed both as **healthy**. |
+| The badge didn't change on *every* refresh | Not a bug: the ALB uses round robin **per request**. A page load makes ~12 requests, so which instance answers `server-info.json` varies. | Verified with `curl`: 20 requests split 10/10 between the instances, and requests on one connection alternate 1, 2, 1, 2. |
 | `scp` failed with *Permission denied* | `/var/www/html` is owned by `root`. | The setup script runs `chown -R ubuntu:www-data /var/www/html`, so the `ubuntu` user can copy files and Apache (`www-data`) can still read them. |
 | Metadata requests returned nothing | New instances require **IMDSv2**, which needs a session token first. | Request a token with `PUT /latest/api/token`, then send it with each metadata request. |
 | The 404 page lost its styling on deep URLs like `/a/b/c` | Relative paths resolved against the missing folder. | `404.html` uses `<base href="/">` so assets always load from the site root. |
