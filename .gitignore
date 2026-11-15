@@ -13,6 +13,7 @@ credentials
 
 # Local tooling (not part of the website)
 .claude/
+.playwright-cli/
 
 # Generated on each EC2 server by the user data script - never commit it
 server-info.json
